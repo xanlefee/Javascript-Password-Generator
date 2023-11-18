@@ -91,61 +91,92 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+   
+    let userconfirm;
+  
+   
+
+
     let quezzies = confirm("Do you want to generate a password right now?");
-    let usernumber;
 
- 
- 
 
-    while (quezzies) {
 
-        for (let i = 0; i < 5; i++) {
 
+
+    while (quezzies === true) {
+
+        for (let i = 0; i < 1; i++) {
 
             let digitz = prompt("How many characters do you want?");
-            digitz = usernumber;
-
-            // make conditionals for user number!
-        
-            let case_low = confirm("Do you want to use lower case characters? Y or N?");
-
-
-            let case_upper = confirm("Do you want to use upper case characters? Y or N?");
-
-
-            let numero = confirm("Do you want to use numbers? Y or N?");
-
-
-            let spesh = confirm("Do you want to use special characters? Y or N?");
-
-          
-          
-
-
-            if (case_low == false && case_upper == false && numero == false && spesh == false) {
-                alert("Sorry, you must say Yes (Y) to something...");
-            }
-
-            
            
 
-            
 
-            else  {
 
-                alert("Let us proceed!");
-                quezzies = false; 
+
+            if (digitz < 8 || digitz > 128 || digitz === NaN) {
+
+                alert("Soz, the number must be between 8-128!");
+                quezzies === true;
+               
+
+            }
+
+            else {
+
+                
+                quezzies === false;
+
+
+                userconfirm = confirm("You want " + digitz + " characters, confirm?");
+
+                while (userconfirm === true) {
+
+                    for (let i = 0; i < 5; i++) {
+
+                        let case_lower = confirm("Do you want lower case?");
+                        let case_upp = confirm("Do you want upper case?");
+                        let numba = confirm("Do you want numbers?");
+                        let speshal = confirm("Do you want special characters?");
+
+                        if (case_lower == false && case_upp == false && numba == false && speshal == false) {
+                            alert("Sorry, you must say Yes (Y) to something...");
+                        }
+
+                        else {
+
+                            alert("Let us proceed!");
+
+                            
+
+
+
+
+
+
+
+                            userconfirm = false;
+                            return userconfirm;
+                            
+                        }
+
+
+                    }
+
+
+                }
+
+var characterz = digitz;
+                return quezzies;
+                
+
+
+
+
+
+
             }
 
 
-
-
-
-          
-
-
-         
-    
 
         }
 
@@ -156,26 +187,70 @@ function getPasswordOptions() {
 
 
 
+
+
 }
+
+
+
+
 
 getPasswordOptions();
 
-//if getPasswordOptions.case_low == "Y" { 
-
-   // return lowerCasedCharacters()
 
 
-//}
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-}
+
+return arr[Math.floor(Math.random() * arr.length)]
+
+    //if (getPasswordOptions.case_lower == true) {
+
+        
+    }
+
+
 
 // Function to generate password with user input
 function generatePassword() {
 
+    let pword = [""];
+  
+
+    if (getPasswordOptions.case_upp === true) {
+
+        pword.push(getRandom(upperCasedCharacters));
+    }
+
+    if (getPasswordOptions.case_lower === true) {
+
+        pword.push(getRandom(lowerCasedCharacters));
+    }
+
+    if (getPasswordOptions.speshal === true) {
+
+        pword.push(getRandom(specialCharacters));
+    }
+
+    if (getPasswordOptions.numba === true) {
+
+        pword.push(getRandom(numericCharacters));
+    }
+
+
+  //  pword.length = getPasswordOptions.characterz;
+
+   // getRandom(specialCharacters);
+ //   getRandom(upperCasedCharacters);
+  //  getRandom(lowerCasedCharacters);
+  //  getRandom(numericCharacters);
+
 }
+
+console.log(generatePassword.pword);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
