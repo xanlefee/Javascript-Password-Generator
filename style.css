@@ -12,7 +12,7 @@ body {
 
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url(/images/javascrypt222-01.png);
+  background-image: url(./images/javascrypt222-01.png);
 }
 
 
@@ -50,7 +50,7 @@ header {
 .card-body {
   min-height: 30%;
   border: none;
-  background-image: url(/images/javascrypt-book-05.png);
+  background-image: url(./images/javascrypt-book-05.png);
 background-size: 60%;
 padding-bottom: 15%;
 margin-top: 0;
