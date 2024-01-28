@@ -102,7 +102,7 @@ function getPasswordOptions() {
 
     // starts off confirming user wants to generate a password
     let userconfirm;
-    let quezzies = confirm("Do you want to generate a password right now?");
+    let quezzies = confirm("Do you want to generate a password?");
 
     //while they do want to generate a password, the questions will be asked...
 
@@ -129,7 +129,7 @@ function getPasswordOptions() {
                 quezzies === false;
 
 
-                userconfirm = confirm("You want " + digitz + " characters, confirm?");
+                userconfirm = confirm("Do you want " + digitz + "?");
 
                 //this user confirmation starts another while loop asking what characters the user wants...
 
@@ -190,7 +190,9 @@ function getPasswordOptions() {
 }
 
 
-getPasswordOptions();
+
+
+//getPasswordOptions();
 
 
 // Function for getting a random element from an array - will be used on all the arrays to generate password
@@ -240,7 +242,7 @@ function generatePassword() {
 
 
 }
-generatePassword();
+//generatePassword();
 
 
 // Get references to the #generate element
@@ -258,4 +260,16 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+//generateBtn.addEventListener('click', writePassword);
+
+generateBtn.addEventListener('click', event => {
+
+    event.preventDefault();
+
+    getPasswordOptions();
+    generatePassword();
+    writePassword()
+
+
+});
+
