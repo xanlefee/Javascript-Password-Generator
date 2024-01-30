@@ -22,7 +22,7 @@ https://xanlefee.github.io/Javascript-Password-Generator
 
 
 
-<img src="images/Password Generator - Google Chrome.png" width="800" />
+<img src="images/Password Generator.png" width="800" />
 
 
 
